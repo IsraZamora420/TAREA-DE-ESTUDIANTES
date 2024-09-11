@@ -1,0 +1,46 @@
+<button (click)="openModal()">Agregar Calificación</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre de Tarea</th>
+      <th>Descripción</th>
+      <th>Fecha de Inicio</th>
+      <th>Fecha Fin</th>
+      <th>Calificación</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let calificacion of calificaciones">
+      <td>{{ calificacion.nombreTarea }}</td>
+      <td>{{ calificacion.descripcion }}</td>
+      <td>{{ calificacion.fechaInicio }}</td>
+      <td>{{ calificacion.fechaFin }}</td>
+      <td>{{ calificacion.calificacion }}</td>
+      <td>{{ calificacion.estado }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div *ngIf="modalVisible" class="modal">
+  <form (ngSubmit)="onSubmit()">
+    <label for="nombreTarea">Nombre de Tarea:</label>
+    <input type="text" id="nombreTarea" [(ngModel)]="calificacion.nombreTarea" name="nombreTarea" required>
+    
+    <label for="descripcion">Descripción de Tarea:</label>
+    <input type="text" id="descripcion" [(ngModel)]="calificacion.descripcion" name="descripcion" required>
+    
+    <label for="fechaInicio">Fecha de Inicio:</label>
+    <input type="date" id="fechaInicio" [(ngModel)]="calificacion.fechaInicio" name="fechaInicio" required>
+    
+    <label for="fechaFin">Fecha Fin:</label>
+    <input type="date" id="fechaFin" [(ngModel)]="calificacion.fechaFin" name="fechaFin" required>
+    
+    <label for="calificacion">Calificación:</label>
+    <input type="number" id="calificacion" [(ngModel)]="calificacion.calificacion" name="calificacion" required>
+    
+    <button type="submit">Guardar Calificación</button>
+  </form>
+</div>

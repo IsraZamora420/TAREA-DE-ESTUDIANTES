@@ -1,0 +1,19 @@
+<form #estudianteForm="ngForm" (ngSubmit)="onSubmit()">
+    <label for="identificacion">Identificación:</label>
+    <input type="text" id="identificacion" [(ngModel)]="estudiante.identificacion" name="identificacion" required>
+    
+    <label for="nombres">Nombres:</label>
+    <input type="text" id="nombres" [(ngModel)]="estudiante.nombres" name="nombres" required>
+    
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" [(ngModel)]="estudiante.apellidos" name="apellidos" required>
+    
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" [(ngModel)]="estudiante.fechaNacimiento" name="fechaNacimiento" required>
+    
+    <label for="curso">Curso:</label>
+    <input type="text" id="curso" [(ngModel)]="estudiante.curso" name="curso" required>
+    
+    <button type="submit">Guardar Estudiante</button>
+  </form>
+  
